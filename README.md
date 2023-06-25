@@ -1,3 +1,9 @@
 # FoodApp
-<img width="479" alt="Снимок экрана 2023-04-05 в 15 31 58" src="https://user-images.githubusercontent.com/77745444/230097982-8eea8919-86fd-4dd1-ad78-e2be1b00322b.png">
-<img width="479" alt="Снимок экрана 2023-04-05 в 15 32 09" src="https://user-images.githubusercontent.com/77745444/230098034-eda95836-9bfa-46de-9d56-60f02a6bacea.png">
+![Simulator Screenshot - iPhone 14 Pro - 2023-06-25 at 18 15 00](https://github.com/Kamenchukov/FoodApp/assets/77745444/d76d7575-2403-49a3-8f9c-652571a6d18f)
+![Simulator Screenshot - iPhone 14 Pro - 2023-06-25 at 18 15 11](https://github.com/Kamenchukov/FoodApp/assets/77745444/4cd8f54f-a5f0-471f-9ec5-95c68b2a1102)
+![Simulator Screenshot - iPhone 14 Pro - 2023-06-25 at 18 15 47](https://github.com/Kamenchukov/FoodApp/assets/77745444/60bbbff2-cbc4-4863-8a85-9d61721505c4)
+
+
+
+Uploading Запись экрана 2023-06-25 в 18.16.07.mov…
+
