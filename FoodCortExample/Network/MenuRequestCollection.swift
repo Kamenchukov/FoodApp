@@ -8,31 +8,46 @@ import Foundation
 import Moya
 
 enum MenuRequestCollection {
-    case getMenu
+    case getPizza
+    case getBurgers
+    case getDeserts
+    case getDrinks
 }
 
 extension MenuRequestCollection: TargetType {
     var baseURL: URL {
-        URL(string: "https://private-anon-d301776f42-pizzaapp.apiary-mock.com/restaurants")!
+        URL(string: "https://free-food-menus-api-production.up.railway.app")!
     }
     
     var path: String {
         switch self {
-        case .getMenu:
-            return "/restaurantId/menu"
+        case .getPizza:
+            return "/pizzas"
+        case .getBurgers:
+            return "/burgers"
+        case .getDeserts:
+            return "/desserts"
+        case .getDrinks:
+            return "/drinks"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getMenu:
+        case .getPizza, .getBurgers, .getDeserts, .getDrinks:
             return .get
         }
     }
     
     var task: Moya.Task {
         switch self {
-        case .getMenu:
+        case .getPizza:
+            return .requestPlain
+        case .getBurgers:
+            return .requestPlain
+        case .getDeserts:
+            return .requestPlain
+        case .getDrinks:
             return .requestPlain
         }
     }

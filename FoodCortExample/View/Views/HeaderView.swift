@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @ObservedObject var dataModel: MenuViewModel
+    @ObservedObject var presenter: MenuPresenter
     var body: some View {
         VStack(spacing: 8) {
             BannersView()
-            CotegoryView(viewModel: dataModel)
+            CotegoryView(presenter: presenter)
                 .padding(.bottom, 10)
         }
     }
@@ -20,6 +20,6 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(dataModel: MenuViewModel(router: .previewMock()))
+        HeaderView(presenter: MenuPresenter(router: .previewMock()))
     }
 }

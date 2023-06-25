@@ -8,21 +8,19 @@
 import SwiftUI
 
 struct GoodsView: View {
-    @ObservedObject var viewModel: MenuViewModel
+    @ObservedObject var presenter: MenuPresenter
 
-    init(viewModel: MenuViewModel) {
-        self.viewModel = viewModel
+    init(presenter: MenuPresenter) {
+        self.presenter = presenter
     }
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                ForEach(viewModel.menu) { dat in
+                ForEach(presenter.menu) { dat in
                     GoodViewCell(menuItem: dat)
                 }.background(.white)
                 .cornerRadius(20, corners: [.topLeft, .topRight])
             }
-        }.onAppear {
-            viewModel.loadMenu()
         }
         .background(.gray)
     }
@@ -30,6 +28,6 @@ struct GoodsView: View {
 
 struct GoodsView_Previews: PreviewProvider {
     static var previews: some View {
-        GoodsView(viewModel: MenuViewModel(router: .previewMock()))
+        GoodsView(presenter: MenuPresenter(router: .previewMock()))
     }
 }

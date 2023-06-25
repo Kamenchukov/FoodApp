@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CotegoryView: View {
-    @ObservedObject var viewModel: MenuViewModel
+    @ObservedObject var presenter: MenuPresenter
     @State var show1: Bool = true
     @State var show2: Bool = false
     @State var show3: Bool = false
@@ -19,16 +19,17 @@ struct CotegoryView: View {
             HStack(spacing: 8) {
                 CategoryViewCell(tapped: $show1, name: "Пицца")
                     .onTapGesture {
-                        viewModel.menu = viewModel.pizzaCategory
+                        presenter.menu = presenter.pizzaCategory
                         self.show1.toggle()
                         self.show2 = false
                         self.show3 = false
                         self.show4 = false
                 }
                 
-                CategoryViewCell(tapped: $show2, name: "Салаты")
+                CategoryViewCell(tapped: $show2, name: "Бургеры")
                     .onTapGesture {
-                        viewModel.menu = viewModel.tillbehor
+
+                        presenter.menu = presenter.burgerCategory
                         self.show2.toggle()
                         self.show1 = false
                         self.show3 = false
@@ -37,15 +38,17 @@ struct CotegoryView: View {
                 
                 CategoryViewCell(tapped: $show3, name: "Напитки")
                     .onTapGesture {
-                        viewModel.menu = viewModel.drinkCategory
+
+                        presenter.menu = presenter.drinkCategory
                         self.show3.toggle()
                         self.show1 = false
                         self.show2 = false
                         self.show4 = false
                     }
-                CategoryViewCell(tapped: $show4, name: "Все")
+                CategoryViewCell(tapped: $show4, name: "Десерты")
                     .onTapGesture {
-                        viewModel.menu = viewModel.allMenu
+
+                        presenter.menu = presenter.desertCategory
                         self.show4.toggle()
                         self.show1 = false
                         self.show2 = false
