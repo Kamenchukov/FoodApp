@@ -1,4 +1,4 @@
 # FoodApp
-![Simulator Screenshot - iPhone 14 Pro - 2023-06-25 at 18 15 00](https://github.com/Kamenchukov/FoodApp/assets/77745444/d76d7575-2403-49a3-8f9c-652571a6d18f)
-![Simulator Screenshot - iPhone 14 Pro - 2023-06-25 at 18 15 11](https://github.com/Kamenchukov/FoodApp/assets/77745444/4cd8f54f-a5f0-471f-9ec5-95c68b2a1102)
-![Simulator Screenshot - iPhone 14 Pro - 2023-06-25 at 18 15 47](https://github.com/Kamenchukov/FoodApp/assets/77745444/60bbbff2-cbc4-4863-8a85-9d61721505c4)
+![Simulator Screenshot - iPhone 14 Pro - 2023-06-25 at 18 15 47](https://github.com/Kamenchukov/FoodApp/assets/77745444/e71902a6-2509-46dd-a941-b6ac657165ac)
+![Simulator Screenshot - iPhone 14 Pro - 2023-06-25 at 18 15 11](https://github.com/Kamenchukov/FoodApp/assets/77745444/a5971902-13ea-4478-9fdd-9272d100a203)
+![Simulator Screenshot - iPhone 14 Pro - 2023-06-25 at 18 15 00](https://github.com/Kamenchukov/FoodApp/assets/77745444/35dac14d-4dd9-40b1-8706-1d4eba2b098d)
