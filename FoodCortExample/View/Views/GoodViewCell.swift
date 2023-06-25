@@ -49,7 +49,7 @@ struct GoodViewCell: View {
                         Button {
                             print("buy")
                         } label: {
-                            Text("от \(menuItem.price ?? 5) P")
+                            Text("от \(Int(menuItem.price ?? 5)) P")
                                 .font(.system(size: 13, weight: .regular))
                                 .foregroundColor(CustomColors.magentaMenu)
                                 .frame(width: 52, height: 16)
