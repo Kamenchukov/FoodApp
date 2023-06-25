@@ -9,10 +9,10 @@ import SwiftUI
 import XCoordinator
 
 struct MenuScreenView: View {
-    @ObservedObject var viewModel: MenuViewModel
+    @ObservedObject var presenter: MenuPresenter
 
-    init(viewModel: MenuViewModel) {
-        self.viewModel = viewModel
+    init(presenter: MenuPresenter) {
+        self.presenter = presenter
     }
     
     var body: some View {
@@ -20,7 +20,7 @@ struct MenuScreenView: View {
 
             ZStack {
                 VStack(spacing: 0) {
-                    ForEach(viewModel.menu) { dat in
+                    ForEach(presenter.menu) { dat in
                         GoodViewCell(menuItem: dat)
                     }.background(.white)
                     .cornerRadius(20, corners: [.topLeft, .topRight])
@@ -28,7 +28,7 @@ struct MenuScreenView: View {
                     .padding(.top, 170)
                     GeometryReader { gr in
                         VStack {
-                            HeaderView(dataModel: viewModel)
+                            HeaderView(presenter: presenter)
                                 .background(CustomColors.unselectedBackground)
                                 .frame(height: self.calculateHeight(minHeight: 120, maxHeight: 240, yOffset: gr.frame(in: .global).origin.y))
                                 .offset(y: gr.frame(in: .global).origin.y < 0
@@ -54,9 +54,9 @@ struct MenuScreenView: View {
                 }
             }
         }
-        .onAppear {
-            viewModel.loadMenu()
-            viewModel.menu = viewModel.pizzaCategory
+        .onAppear() {
+            presenter.loadAll()
+            
         }
     }
     
@@ -70,6 +70,6 @@ struct MenuScreenView: View {
 
 struct MenuScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuScreenView(viewModel: MenuViewModel(router: .previewMock()))
+        MenuScreenView(presenter: MenuPresenter(router: .previewMock()))
     }
 }

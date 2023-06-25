@@ -30,8 +30,8 @@ class MenuCoordinator: NavigationCoordinator<MenuRoute> {
     }
     
     private func buildMenuScreen() -> UIViewController {
-        let viewModel = MenuViewModel(router: unownedRouter)
-        let view = MenuScreenView(viewModel: viewModel)
+        let presenter = MenuPresenter(router: unownedRouter)
+        let view = MenuScreenView(presenter: presenter)
         return UIHostingController(rootView: view)
     }
 }

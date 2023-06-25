@@ -8,10 +8,11 @@
 import Foundation
 
 struct MenuModel: Codable,Identifiable {
-    let id: Int
-    let category: String
-    let name: String
-    let topping: [String]?
-    let price: Int
-    let rank: Int?
+    let id: String
+    let img: URL?
+    let name: String?
+    let dsc: String?
+    let price: Double?
+    let rate: Int?
+    let country: String?
 }

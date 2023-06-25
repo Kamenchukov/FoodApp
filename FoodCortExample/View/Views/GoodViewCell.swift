@@ -17,18 +17,30 @@ struct GoodViewCell: View {
 
             HStack(spacing: 32) {
                 Spacer()
-                Image("under")
-                    .resizable()
-                    .frame(width: 132,height: 132)
-                    .padding(.top, 24)
-                    .padding(.bottom, 24)
-                    .padding(.leading, 16)
+                AsyncImage(url: menuItem.img) {
+                    image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 132,height: 132)
+                        .padding(.top, 24)
+                        .padding(.bottom, 24)
+                        .padding(.leading, 16)
+                } placeholder: {
+                    Image("under")
+                        .resizable()
+                        .frame(width: 132,height: 132)
+                        .padding(.top, 24)
+                        .padding(.bottom, 24)
+                        .padding(.leading, 16)
+                }
+               
                 VStack(alignment: .trailing, spacing: 8) {
-                    Text(menuItem.name)
+                    Text(menuItem.name ?? "def")
                         .frame(maxWidth: 168)
                         .font(.system(size: 17, weight: .semibold))
                         
-                    Text(menuItem.topping?.joined(separator: ", ") ?? "")
+                    Text(menuItem.dsc ?? "def")
                         .frame(maxWidth: 168)
                         .font(.system(size: 13, weight: .regular))
                         .foregroundColor(.gray)
@@ -37,7 +49,7 @@ struct GoodViewCell: View {
                         Button {
                             print("buy")
                         } label: {
-                            Text("от \(menuItem.price) P")
+                            Text("от \(menuItem.price ?? 5) P")
                                 .font(.system(size: 13, weight: .regular))
                                 .foregroundColor(CustomColors.magentaMenu)
                                 .frame(width: 52, height: 16)
@@ -53,8 +65,8 @@ struct GoodViewCell: View {
     }
 }
 
-struct GoodViewCell_Previews: PreviewProvider {
-    static var previews: some View {
-        GoodViewCell(menuItem: MenuModel(id: 1, category: "пицца", name: "Пеперони", topping: ["хлеб","масло","пеперони","оливки","ананас"], price: 32, rank: 4))
-    }
-}
+//struct GoodViewCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GoodViewCell(menuItem: MenuModel(id: 1, category: "пицца", name: "Пеперони", topping: ["хлеб","масло","пеперони","оливки","ананас"], price: 32, rank: 4))
+//    }
+//}

@@ -11,18 +11,46 @@ import Combine
 import CombineMoya
 
 protocol MenuService {
-    func getMenu() -> AnyPublisher<[MenuModel], MoyaError>
+    func getPizza() -> AnyPublisher<[MenuModel], MoyaError>
+    func getBurgers() -> AnyPublisher<[MenuModel], MoyaError>
+    func getDeserts() -> AnyPublisher<[MenuModel], MoyaError>
+    func getDrinks() -> AnyPublisher<[MenuModel], MoyaError>
 }
 
 class MenuServiceImpl: MenuService {
     private let provider = MoyaProvider<MenuRequestCollection>()
     
-    func getMenu() -> AnyPublisher<[MenuModel], Moya.MoyaError> {
+    func getBurgers() -> AnyPublisher<[MenuModel], Moya.MoyaError> {
         let decoder = JSONDecoder()
 
-        return provider.requestPublisher(.getMenu)
+        return provider.requestPublisher(.getBurgers)
+            .map([MenuModel].self, using: decoder)
+            .eraseToAnyPublisher()
+    }
+    
+    func getDeserts() -> AnyPublisher<[MenuModel], Moya.MoyaError> {
+        let decoder = JSONDecoder()
+
+        return provider.requestPublisher(.getDeserts)
+            .map([MenuModel].self, using: decoder)
+            .eraseToAnyPublisher()
+    }
+    
+    func getDrinks() -> AnyPublisher<[MenuModel], Moya.MoyaError> {
+        let decoder = JSONDecoder()
+
+        return provider.requestPublisher(.getDrinks)
+            .map([MenuModel].self, using: decoder)
+            .eraseToAnyPublisher()
+    }
+    
+    func getPizza() -> AnyPublisher<[MenuModel], Moya.MoyaError> {
+        let decoder = JSONDecoder()
+
+        return provider.requestPublisher(.getPizza)
             .map([MenuModel].self, using: decoder)
             .eraseToAnyPublisher()
     }
 
 }
+
